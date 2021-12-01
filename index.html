@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <!-- style link  -->
+    <link rel="stylesheet" href="apiformstyles.css" />
+
+    <!-- jquery ui builder css link  -->
+    <link rel="stylesheet" href="jquery-ui.min.css" />
+
+    <title>Application form</title>
+  </head>
+  <body>
+    <h2 id="h2_1">Application - Form</h2>
+    
+    <form>
+      <!-- Heading Api-Form started -->
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              
+              <div class="mb-4 col-6">
+                <label class="form-label">Agent id:</label>
+                <input type="text" class="form-control forOnlyNumbers" id="apiFormAgentId" />                
+              </div>
+
+              <div class="mb-4 col-6">
+                <label class="form-label">Application Name</label>
+                <input
+                  type="text"
+                  class="form-control charsUpto255"
+                  id="apiFormApplicationName"               
+                  />          
+                  <p id="remainingText">  </p>     
+              </div>
+
+            </div>
+            <div class="row">
+              <div class="mb-4 col-12">
+                <label class="form-label">External Key</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apiExternalkey" 
+                  required
+                  /> 
+                 
+              </div>
+            </div>
+
+            <hr class="myHr">
+
+            <!-- Heading plan started -->
+            <h2 class="text-left">Plan</h2>
+
+            <div class="row">
+              <div class="mb-4 col-3">
+                <label class="form-label">Plane id:</label>
+                <input type="text" class="form-control forOnlyNumbers" id="applicationPlanId" required />
+               
+              </div>
+              <div class="mb-4 col-3">
+                <label class="form-label">Equipment Cost to   t:</label>
+                <input
+                  type="text"
+                  class="form-control forOnlyNumbers"
+                  value="0"
+                  id="planEquipmentCostToMerchant"
+                />
+                
+              </div>
+              <div class="mb-4 col-3">
+                <label class="form-label">Account Setup Fee:</label>
+                <input
+                  type="text"
+                  class="form-control forOnlyNumbers"
+                  id="planAccountSetupFee"                
+                />
+                
+              </div>
+              <div class="mb-4 col-3">
+                <label class="form-label">Discount Frequency:</label>
+
+                <select id="planDiscountFrequency" class="form-select">
+                  <option value="1" selected > Daily</option>
+                  <option value="2">Monthly</option>
+                </select>
+              </div>
+            </div>
+
+            <hr class="myHr">
+          
+
+            <!-- Plan Sub-Heading Equipment started -->       
+          <div class="row equipmentDiv" id="equipmentDiv1">            
+              <div id="addEquipbtnDiv" ><button type="button" id="addEquipmentBtn" class="btn btn-warning">Add Equipment</button></div> 
+                      
+                <h2 class="text-left1">Equipment 1</h2>  
+                    <div class="row">
+                      <div class="mb-4 col-6">
+                      <label class="form-label">Equipment Id:</label>                
+                      <input  type="text" class="form-control equipment-class forOnlyNumbers"/>               
+                    </div>
+
+                    <div class="mb-4 col-6">
+                      <label class="form-label">Total number of quantity for equipment:</label>                
+                      <input type = "text" class="form-control quantity-class forOnlyNumbers" value="1" />                
+                    </div>
+                  </div>        
+               </div>
+            </div>   
+                     
+
+            <!-- Heading Shipping started -->
+            <h2 class="text-left">Shipping</h2>
+           
+            <div class="row">
+              <div class="mb-4 col-6">
+                <label class="form-label">Shipping Destination:</label>
+                <select id="shippingDestination" class="form-select" > 
+                  <!-- onclick="onShipTo()" -->
+                  <option value="1" >AGENT</option>
+                  <option value="2" >CORPORATE</option>
+                  <option value="3" selected>DBA</option>
+                  <option value="4" >OWNER1</option>
+                  <option value="5" >SHIP TO</option>
+                </select>
+                <span id = "shipToSpan">  </span>
+              </div>
+             
+
+              <div class="mb-4 col-6">
+                <label class="form-label">Delivery Method:</label>
+                <select id="deliveryMethod" class="form-select">                  
+                  <option selected>Ground</option>
+                  <option >Next Day Air 8:00am</option>
+                  <option >Next Day Air 10:30am</option>
+                  <option >Next Day Air Saver 3:00pm</option>
+                  <option >Pick Up</option>
+                </select>
+              </div>
+            </div>
+
+            <hr class="myHr">
+            <!-- Heading Principals started -->
+
+            <!-- first row elements -->
+        <div class="allPtags">
+            <h2 class="text-left">Principals</h2>
+            <div class="row">
+              <div class="mb-4 col-6">
+                <label class="form-label">First Name:</label>
+                <input
+                  type="text"
+                  class="form-control "
+                  id="firstNamePrin"                  
+                  required />  
+                  <p id="p_2" >  </p>              
+              </div>
+
+              <div class="mb-4 col-6">
+                <label id="lastName" class="form-label">Last Name:</label>
+                <input
+                  type="text"
+                  class="form-control "
+                  id="lastNamePrin"
+                  required
+                />
+                <p id="p_3" >  </p> 
+              </div>
+            </div>
+
+            <!-- second row elements -->
+            <div class="row">
+              <div class="mb-4 col-4">
+                <label class="form-label">Social Security Number:</label>
+                <input type="text" class="form-control" id="socialSecurityNumberPrin" required />
+              </div>
+
+              <div class="mb-4 col-4">
+                <label class="form-label"> Driver License Number:</label>
+                <input type="text" class="form-control" id="driverLicenseNumber" required />
+                <p id="p_4" >  </p> 
+              </div>
+
+              <div class="mb-4 col-4">
+                <label class="form-label">Driver License Issued State:</label>
+                <select class="form-select form-state" id="driverLicenseIssuedState">
+                  <option value="null" selected></option>                  
+                </select>
+              </div>
+
+              <!-- third row elements -->
+              <div class="mb-4 col-4">
+                <label class="form-label">Date of Birth:</label>
+                <input
+                  class="form-control"
+                  id="dateOfBirthPrin"
+                  type="text"                  
+                  required
+                />
+              </div>
+              <div class="mb-4 col-4">
+                <label class="form-label">Phone Number:</label>
+                <input
+                  class="form-control number-field"
+                  type="text"
+                  id="phoneNumberPrin"
+                  maxlength="10"
+                  required
+                />                
+              </div>
+              <div class="mb-4 col-4">
+                <label class="form-label">Email:</label>
+                <input
+                  class="form-control email-validation2"
+                  type="text"
+                  id="emailPrin"
+                  required
+                />
+                <span class="span2-class">  </span>
+              </div>
+            </div>
+
+            <!-- fourth row elements -->
+            <div class="row">
+              <div class="mb-4 col-6">
+                <label class="form-label">Street:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="streetPrin" />
+                  <p id="p_6" >  </p>
+              </div>
+
+              <div class="mb-4 col-6">
+                <label class="form-label"> Street 2:</label>
+                <input
+                  type="text"
+                  class="form-control "
+                  id="street2Prin"
+                  />
+                  <p id="p_7" >  </p>
+              </div>
+            </div>
+
+            <!--fifth row elements -->
+            <div class="row">
+              <div class="mb-4 col-4">
+                <label class="form-label">City:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cityPrin"
+                  />
+                  <p id="p_8" >  </p>
+              </div>
+      
+              <div class="mb-4 col-4">
+                <label class="form-label"> State:</label>
+              <select class="form-select form-state" id="statePrin"> 
+                <option value="null" selected> </option> 
+              </select>                   
+              </div>
+
+              <div class="mb-4 col-4">
+                <label class="form-label">Zip Code:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zipCodePrin"
+                  minlength="5"
+                  maxlength="10"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+            <!-- Sixth row elements -->
+            <div class="row">
+              <div class="mb-4 col-4">
+                <label class="form-label"> Equity Ownership Percentage:</label>
+                <input
+                  type="text"
+                  class="form-control number-field"
+                  id="equityOwnershipPercentage"
+                  required
+                />
+                <p id="equityOwnPerId"> </p>
+              </div>
+              <div class="mb-4 col-4">
+                <label class="form-label"> Title:</label>
+                <select id="titlePrin" class="form-select">              
+                  <option >CEO</option>
+                  <option >Manager</option>
+                  <option selected>Owner</option>
+                  <option >Partner</option>                 
+                  <option >President</option>
+                  <option >Vice-President</option>
+                <select>
+              </div>
+              <div class="mb-4 col-4">
+                <label class="form-label"> Personal Guarantor:</label>
+                <div id="bothLabel">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Yes
+                  </label>
+
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    No
+                  </label>  
+                </div>             
+              </div>
+            </div>
+
+            <hr class="myHr">
+           <!-- Heading Business started -->
+           <h2 class="text-left">Business</h2>
+
+            <!-- first row elements -->            
+            <div class="row">
+              <div class="mb-4 col-2">
+                <label class="form-label"> dba Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="dbaName"/>
+                <p id="p_9"> </p>
+              </div>
+              <div class="mb-4 col-2">
+                <label class="form-label"> Corporate Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="corporateName"                
+                />     
+                <p id="p_10"> </p>           
+              </div>
+
+              <div class="mb-4 col-4">
+                <label class="form-label"> Business Type:</label>
+                <select id="businessType" class="form-select">              
+                  <option >A -  Association/Estate/Trust</option>
+                  <option >C - Corporation</option>
+                  <option  selected>G - Government</option>
+                  <option >I - International Organization</option>
+                  <option >L - LLC</option>
+                  <option >M - Medical/Legal Corporation</option>
+                  <option >N -  Non-Profit</option>
+                  <option >P - Partnership</option>
+                  <option >S - Sole Proprietor</option>
+                  <option >T - Tax Exempt Organization</option>
+                <select>
+              </div>
+
+              <div class="mb-4 col-2">
+                <label class="form-label"> Federal Tax Id Number: </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="federalTaxIdNumber"                 
+                />     
+                <p id="p_11"> </p>             
+              </div>
+
+              <div class="mb-4 col-2">
+                <label class="form-label"> Federal Tax Id Type: </label>
+                <select class="form-select" id="federalTaxIdType"> 
+                  <option Selected> SSN </option>             
+                  <option> EIN </option>                                  
+                </select>               
+              </div>
+             </div>
+
+            <!-- Second row elements --> 
+            <div class="row">
+              <div class="mb-4 col-3">
+                <label class="form-label"> MCC:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="mcc"            
+                />
+              <p id="p_12"> </p>                   
+            </div>
+
+              <div class="mb-4 col-3">
+                <label class="form-label"> Phone:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phoneBusiness"               
+                />       
+                <p id="p_13"> </p>           
+              </div>
+
+              <div class="mb-4 col-3">
+                <label class="form-label">Email:</label>
+                <input
+                  type="email"
+                  class="form-control email-validation"
+                  id="emailBusiness"           
+                /> 
+                <span class="span-class"></span>  
+              </div>
+            </div>   
+              
+<!-- Bussiness Sub-Heading websites started -->  
+          <div class="row ref-class"  id="websiteDiv">
+            <div id="addWebBtn"> <button type="button" id="addWebsiteBtn" class="btn btn-warning">Add Website</button></div> 
+              <h2 class="text-left1">Website 1</h2>                   
+         
+              <div class="mb-4 col-4">              
+                <label class="form-label">URL:</label>
+                <input type="text" class="form-control" id="url" />                 
+              </div>   
+
+              <div class="mb-4 col-4">              
+                <label class="form-label">Website Customer Service Email:</label>
+                <input type="text" class="form-control" id="websiteCustomerServiceEmail" />                 
+              </div>  
+
+              <div class="mb-4 col-4">              
+                <label class="form-label">Website Customer Service PhoneNumber:</label>
+                <input type="text" class="form-control" id="websiteCustomerServicePhoneNumber" />                 
+              </div>  
+          </div>
+
+   <!-- Third row elements --> 
+   <div class="row">
+      <div class="mb-4 col-2">
+        <label class="form-label"> Average Ticket Amount:</label>
+        <input type="text" value = "1" class="form-control number-field" id="averageTicketAmount" />      
+      </div>
+
+        <div class="mb-4 col-2">
+          <label class="form-label"> Average Monthly Volume:</label>
+          <input
+            type="text"
+            class="form-control number-field"
+            value = "1"
+            id="averageMonthlyVolume" />                
+        </div>
+
+      <div class="mb-4 col-2">
+        <label class="form-label">High Ticket Amount:</label>
+        <input type="text" class="form-control number-field" value = "1" id="highTicketAmount" />   
+      </div>     
+    
+      <div class="mb-4 col-2">
+        <label class="form-label">Statement Delivery Method:</label>
+        <select id="statementDeliveryMethod" class="form-select">              
+        <option selected> Electronic</option>
+        <option >Paper</option> 
+        </select> 
+      </div> 
+
+      <div class="mb-4 col-4">
+          <label class="form-label ">Merchandise Services Sold:</label>
+          <input id="merchandiseServicesSold" class="form-control charsUpto255" type="text" />  
+          <p id="remainingText2">  </p>  
+      </div>  
+     
+   </div>
+
+   <!-- Bussiness Sub-Heading Percent of Business Transactions started -->
+   <h2 class="text-left1">Percent of Business Transactions</h2>
+
+   <!-- first row elements -->            
+  <div class="row">
+     <div class="mb-4 col-3">
+       <label class="form-label"> Card Swiped:</label>
+       <input type="text" id="cardSwiped" min="1" max="100" class="form-control number-field upto-100-only"/>                       
+     </div>
+
+     <div class="mb-4 col-3">
+       <label class="form-label"> keyedCard Present Not Imprinted:</label>
+       <input type="text" id="keyedCardPresentNotImprinted" min="1" max="100" class="form-control number-field upto-100-only"/>               
+     </div>   
+  
+    <div class="mb-4 col-3">
+      <label class="form-label">Mail or Phone Order:</label>
+      <input type="text" id="mailOrPhoneOrder" min="1" max="100" class="form-control number-field upto-100-only"/>                       
+    </div>
+
+    <div class="mb-4 col-3">
+      <label class="form-label">Internet:</label>
+      <input type="text" id="internet" min="1" max="100" class="form-control number-field upto-100-only"/>               
+    </div>   
+</div>
+
+   <!-- Bussiness Sub-Heading EBT started -->
+   <h2 class="text-left1">EBT</h2>
+
+   <!-- first row elements -->            
+  <div class="row">
+     <div class="mb-4 col-4">
+       <label class="form-label"> EBT Food:</label>
+       <!-- <input type="number" id="ebtFood" class="form-control"/> -->
+       <div id="bothLabel">
+        <input class="form-check-input" type="radio" name="flexRadioDefaultebtFood" id="ebtFoodYes">
+        <label class="form-check-label" for="flexRadioDefault1ebtFood">
+          Yes
+        </label>
+
+        <input class="form-check-input" type="radio" name="flexRadioDefaultebtFood" id="ebtFoodNo" checked>
+        <label class="form-check-label" for="flexRadioDefault2ebtFood">
+          No
+        </label>  
+      </div>
+     </div>
+
+     <div class="mb-4 col-4">
+       <label class="form-label"> EBT Cash:</label>
+       <!-- <input type="number" id="ebtCash" class="form-control"/>                -->
+       <div id="bothLabel">
+        <input class="form-check-input" type="radio" name="flexRadioDefaultCashYes" id="ebtCashYes">
+        <label class="form-check-label" for="flexRadioDefault1CashYes">
+          Yes
+        </label>
+
+        <input class="form-check-input" type="radio" name="flexRadioDefaultCashYes" id="ebtCashNo" checked>
+        <label class="form-check-label" for="flexRadioDefault2CashYes">
+          No
+        </label>  
+      </div>
+     </div>   
+  
+    <div class="mb-4 col-4">
+      <label class="form-label">EBT Account Number:</label>
+      <input type="text" id="ebtAccountNumber" class="form-control"/>    
+      <p id="p_14">  </p>                     
+    </div>        
+</div>
+
+  <!-- Bussiness Sub-Heading Bussiness Contact started -->
+  <h2 class="text-left1">Bussiness Contact</h2>
+
+  <!-- first row elements -->  
+<div id="bussinessSpans">            
+        <div class="row">
+          <div class="mb-4 col-6">
+            <label class="form-label">First Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstNameBc"
+              required
+            />
+            <span id="span_1"> </span>
+          </div>
+
+          <div class="mb-4 col-6">
+            <label class="form-label">Last Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lastNameBc"
+              required
+            />
+            <span id="span_2"> </span>
+          </div>
+        </div>
+
+        <!-- second row elements -->
+        <div class="row">
+          <div class="mb-4 col-3">
+            <label class="form-label">Social Security Number:</label>
+            <input type="text" id="socialSecurityNumberBc" class="form-control" required />
+            <span id="span_3"> </span>
+        </div>                      
+        
+
+        <div class="mb-4 col-3">
+            <label class="form-label">Date of Birth:</label>
+            <input
+              class="form-control"
+              id="dateOfBirthBc"
+              type="text"
+              
+              required
+            />
+          </div>
+
+          <div class="mb-4 col-3">
+            <label class="form-label">Phone Number:</label>
+            <input
+              class="form-control"
+              type="text"
+              id="phoneNumberBc"
+              required
+            />
+          <span id="span_4"> </span>
+          </div>
+
+          <div class="mb-4 col-3">
+            <label class="form-label">Email:</label>
+            <input
+              class="form-control" type="text"
+              id="emailBc"
+              required
+            />
+            <span id="span_5"> </span>
+          </div>
+        </div>
+
+
+          <!-- third row elements -->
+        <div class="row">
+          <div class="mb-4 col-6">
+            <label class="form-label">Street:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="streetBc"
+              />
+            <span id="span_6"> </span>
+          </div>
+
+          <div class="mb-4 col-6">
+            <label class="form-label"> Street 2:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="street2Bc"
+              />
+              <span id="span_7"> </span>
+          </div>
+        </div>
+
+        <!--fourth row elements -->
+        <div class="row">
+          <div class="mb-4 col-4">
+            <label class="form-label">City:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cityBc"
+              />
+              <span di="span_8">
+          </div>
+
+          <div class="mb-4 col-4">
+            <label class="form-label"> State:</label>
+            <select class="form-select form-state" id="formStateBc">
+              <option value="null" selected></option>      
+            </select>
+          </div>
+
+          <div class="mb-4 col-4">
+            <label class="form-label"> Zip Code: </label>
+            <input
+              type="text"
+              class="form-control"    
+              id="zipCodeBc" 
+              minlength="5"
+              maxlength="10"
+              required
+            />
+          </div>    
+        </div>
+   
+<!-- Bussiness Sub-Heading Bussiness Address started -->
+<h2 class="text-left1">Bussiness Address</h2>
+
+<!--Bussiness Address Sub-Heading DBA started -->
+<h2 class="text-left2">DBA</h2>  
+
+<!-- first row elements -->  
+<div class="row">
+  <div class="mb-4 col-6">
+    <label class="form-label">Street:</label>
+    <input type="text" id="streetDba" class="form-control" /> 
+    <span id="span_9"> </span>
+  </div>
+
+  <div class="mb-4 col-6">
+    <label class="form-label"> Street 2:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="street2Dba"
+      />
+      <span id="span_10">
+  </div>
+</div>
+
+<!-- second row elements -->  
+<div class="row">
+  <div class="mb-4 col-4">
+    <label class="form-label">City:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cityDba"
+      />
+      <span id="span_11"></span>
+  </div>
+
+  <div class="mb-4 col-4">
+    <label class="form-label"> State:</label>
+    <select  id="stateDba" class="form-select form-state">
+      
+    </select>
+  </div>
+
+  <div class="mb-4 col-4">
+    <label class="form-label"> Zip Code:</label>
+    <input
+      type="text"
+      class="form-control"   
+      id="zipCodeDba" 
+      minlength="5"
+      maxlength="10" 
+      required
+    />
+  </div> 
+</div>
+
+<!--Bussiness Address Sub-Heading Corporate started -->
+<h2 class="text-left2">Corporate</h2>  
+
+<!-- first row elements --> 
+<div class="row">
+  <div class="mb-4 col-6">
+    <label class="form-label">Street:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="streetCorporate"
+      />
+      <span id="span_12"></span>
+  </div>
+
+  <div class="mb-4 col-6">
+    <label class="form-label"> Street 2:</label>
+    <input
+      type="text"
+      id="street2Corporate"
+      class="form-control"
+      />
+      <span id="span_13"></span>
+  </div>
+</div>
+
+<!-- Second row elements --> 
+<div class="row">
+  <div class="mb-4 col-4">
+    <label class="form-label">City:</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cityCorporate"
+      />
+      <span id="span_14"></span>
+  </div>
+
+  <div class="mb-4 col-4">
+    <label class="form-label"> State:</label>
+    <select id="stateCorporate" class="form-select form-state">      
+    </select>
+  </div>
+
+  <div class="mb-4 col-4">
+    <label class="form-label"> Zip Code:</label>
+    <input
+      type="text"
+      class="form-control" 
+      id="zipCodeCorporate"   
+      minlength="5"
+      maxlength="10"  
+      required
+    />
+  </div> 
+</div>
+
+<!--Bussiness Address Sub-Heading Ship To started -->
+<h2 class="text-left2">Ship To</h2>  
+
+<!-- first row elements --> 
+<div class="row  ">
+  <div class="mb-4 col-6">
+    <label class="form-label">Street:</label>
+    <input type="text" id="streetShipTo" class="form-control shipToExample"/>  
+    <span id="span_15"></span>  
+  </div>
+
+  <div class="mb-4 col-6">
+    <label class="form-label shipToExample"> Street 2:</label>
+    <input
+      type="text"
+      class="form-control shipToExample"
+      id="street2ShipTo"     
+      />
+      <span id="span_16"></span>
+  </div>
+</div>
+
+<!-- Second row elements --> 
+<div class="row">
+  <div class="mb-4 col-4">
+    <label class="form-label">City:</label>
+    <input
+      type="text"
+      class="form-control shipToExample"
+      id="cityShipTo"
+      />
+      <span id="span_17"></span>
+  </div>
+
+  <div class="mb-4 col-4">
+    <label class="form-label"> State:</label>
+    <select class="form-select form-state shipToExample" id="stateShipTo">
+      
+    </select>
+  </div>
+
+  <div class="mb-4 col-4">
+    <label class="form-label shipToExample"> Zip Code:</label>
+    <input
+      type="text"
+      class="form-control shipToExample"   
+      id="zipCodeShipTo"  
+      required
+    />
+    </div> 
+  </div>
+
+
+    <hr class="myHr">
+    <!-- Heading Bank Account started -->
+    <h2 class="text-left">Bank Account</h2>
+
+    <!-- first row elements -->   
+        <div class="row">
+          <div class="mb-4 col-4">
+             <label class="form-label">Aba Routing:</label>
+             <input type="text" id="abaRouting" class="form-control" />  
+             <span id="span_18"></span>
+          </div>   
+
+            <div class="mb-4 col-4">
+                  <label class="form-label">Demand Deposit Account:</label>
+                  <input type="text" id="demandDepositAccount" class="form-control" />  
+                  <span id="span_19"></span>   
+            </div>
+
+            <div class="mb-4 col-4">
+              <label class="form-label">Account Type:</label>
+              <select id="accountType" class="form-select"> 
+                <option> Checking </option>
+                <option selected> Savings </option>
+              </select>              
+            </div>
+        </div>
+      </div>
+        <hr class="myHr">
+    <!-- Heading exp-Hierarchy started -->
+    <h2 class="text-left">exp-Hierarchy</h2>
+
+    <!-- first row elements -->   
+        <div class="row">
+          <div class="mb-4 col-3">
+             <label class="form-label">CorporateId:</label>
+             <input type="text" id="corporateId" class="form-control" />  
+          </div>   
+
+            <div class="mb-4 col-3">
+                  <label class="form-label">DivisionId:</label>
+                  <input type="text" id="divisionId" class="form-control" />     
+                  
+              </div>
+
+            <div class="mb-4 col-3">
+              <label class="form-label">Create Corporate:</label>
+              <!-- <input type="text" id="createCorporate" class="form-control" /> -->
+                                       
+                 <div id="bothLabel">
+                     <input class="form-check-input" type="radio" name="flexRadioDefaultCreateCorporate" id="CreateCorporateYes">
+                     <label class="form-check-label" for="flexRadioDefault1CreateCorporate">
+                      Yes
+                     </label>
+                    
+                    <input class="form-check-input" type="radio" name="flexRadioDefaultCreateCorporate" id="CreateCorporateNo" checked>
+                    <label class="form-check-label" for="flexRadioDefault2CreateCorporate">
+                      No
+                    </label>  
+                  </div>
+            </div>
+
+            <div class="mb-4 col-3">
+              <label class="form-label">Create Division:</label>
+              <!-- <input type="text" id="createDivision" class="form-control" />                          -->
+                                 
+              <div id="bothLabel">
+                <input class="form-check-input" type="radio" name="flexRadioDefaultCreateDivision" id="CreateDivisionYes">
+                <label class="form-check-label" for="flexRadioDefault1CreateDivision">
+                 Yes
+                </label>
+               
+               <input class="form-check-input" type="radio" name="flexRadioDefaultCreateDivision" id="CreateDivisionNo" checked>
+               <label class="form-check-label" for="flexRadioDefault2CreateDivision">
+                 No
+               </label>  
+             </div>
+            </div>
+        </div>
+
+       <!-- Submit Button block -->
+           <div class="text-center">
+             <button type="" class="mb-4 btn btn-primary px-5" id="submitBtn">
+               Submit
+             </button>           
+           </div>
+       <!-- Submit Button block -->
+      </div>
+    </div>
+  </div>
+</form>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- jquery-ui builder js link  -->
+    <script src="jquery-ui.min.js"></script>
+  </body>
+</html>

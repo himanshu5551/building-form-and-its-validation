@@ -1,0 +1,298 @@
+* {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: rgb(240, 240, 240);
+}
+#form-container {
+  margin: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main-form {
+  background-color: rgb(210, 230, 230);
+  border-radius: 10px;
+  padding: 15px;
+  width: fit-content;
+  margin: auto;
+}
+#labels {
+  font-size: larger;
+  margin: 0px 15px;
+  font-weight: 500;
+}
+#inputs {
+  border-style: none;
+  padding: 10px;
+  border-radius: 6px;
+}
+.btn-2 {
+  width: 100%;
+  text-align: center;
+}
+#btn1 {
+  padding: 18px 40px 18px 40px;
+  border-style: none;
+  border-radius: 6px;
+}
+#btn1:hover {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+    rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
+#btn1:active {
+  color: aqua;
+}
+#h2_1 {
+  padding: 20px 14px 20px 14px;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+#plane_obj {
+  width: 100%;
+  border-style: none;
+  padding: 8px;
+  border-radius: 6px;
+}
+#plane_obj:focus {
+  border-style: none;
+  outline: none;
+}
+#plane_obj:hover {
+  cursor: pointer;
+}
+#divforObj {
+  background-color: rgb(255, 255, 255);
+  margin: 0px;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 59.5vw;
+  position: relative;
+  left: 7vw;
+  top: 0px;
+  height: fit-content;
+}
+#labels_2 {
+  margin-left: 20px;
+  margin-right: 6px;
+}
+#inputs_2 {
+  background-color: rgb(231, 222, 222);
+  outline: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 6px;
+  width: fit-content;
+}
+#insideObjDiv {
+  display: flex;
+  align-items: center;
+  margin: 13px 5px 13px 5px;
+}
+#equipment_array {
+  background-color: rgb(231, 222, 222);
+  outline: none;
+  border-style: none;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+}
+#id_h5 {
+  font-size: 13px;
+  margin-left: 12px;
+}
+/* ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  padding: 3px 10px;
+  margin-left: 8px;
+} */
+
+.form-control {
+  padding: 3px 15px 3px 15px;
+}
+.form-select {
+  padding: 3px 15px 3px 15px;
+}
+.form-label {
+  font-size: small;
+  color: rgb(141, 141, 141);
+}
+.text-left {
+  font-size: x-large;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+.myHr {
+  margin: 30px 100px 30px 0px;
+}
+.text-center {
+  width: 100%;
+}
+.container {
+  background: rgb(255, 255, 255);
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.text-left1 {
+  font-size: large;
+  margin-bottom: 4px;
+  color: rgb(143, 140, 140);
+  font-weight: 550;
+  margin-bottom: 8px;
+  margin-top: 8px;
+}
+.text-left2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(153, 153, 153);
+}
+.equipment-content-div {
+  background-color: rgb(248, 248, 248);
+  padding: 20px 25px 5px 25px;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+#addEquipbtnDiv {
+  display: flex;
+  justify-items: end;
+  justify-content: end;
+}
+.text-end1 {
+  margin-bottom: 10px;
+  transform: translateX(75vw);
+}
+
+.equipmentDiv {
+  background-color: rgb(248, 248, 248);
+  padding: 20px 15px 5px 15px;
+  border-radius: 10px;
+  margin: 20px 0px;
+}
+#remainingText {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+
+.remove-btn-div {
+  display: flex;
+  justify-content: end;
+  justify-items: end;
+  text-align: center;
+}
+#shipToSpan {
+  font-size: small;
+  color: red;
+  position: relative;
+  top: 5px;
+}
+.allPtags p {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#remainingText2 {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#p_9 {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#p_10 {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#p_11 {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#p_12 {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#p_13 {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#p_14 {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#equityOwnPerId {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#bussinessSpans span {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+}
+#ui-datepicker-div {
+  position: absolute;
+  top: 1158.78 px;
+  left: 92.5 px;
+  width: 27%;
+  z-index: 1;
+  display: none;
+}
+.span2-class {
+  font-size: small;
+  color: red;
+  position: relative;
+  top: 8px;
+}
+.span-class {
+  font-size: small;
+  color: red;
+  position: relative;
+  top: 8px;
+}
+#flexRadioDefault2 {
+  margin-left: 80px;
+}
+#bothLabel {
+  padding-top: 5px;
+}
+#addWebBtn {
+  display: flex;
+  justify-content: end;
+  justify-items: end;
+  position: relative;
+  right: 10px;
+  top: 10px;
+}
+#websiteDiv {
+  background-color: rgb(245, 245, 245);
+  border-radius: 8px;
+  padding: 30px 8px 0px 8px;
+  margin: 5px 0px 30px 0px;
+}
+#ebtFoodNo {
+  margin-left: 85px;
+}
+#ebtCashNo {
+  margin-left: 85px;
+}
+
+#CreateCorporateNo {
+  margin-left: 85px;
+}
+#CreateDivisionNo {
+  margin-left: 85px;
+}
